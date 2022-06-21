@@ -46,7 +46,7 @@ public class Main {
         System.out.println("------------------------------------------------------");
         System.out.println("Function to conditional function: " + functionToConditionalFunction().apply(intUnaryOperator, intPredicate).applyAsInt(25));
         System.out.println("------------------------------------------------------");
-        System.out.println("Map: " + functionLoader().apply(map,"a" ).applyAsInt(10));//in case of the second argument is not a key of a map, the function should return the operand
+        System.out.println("Map: " + functionLoader().apply(map,"a" ).applyAsInt(10));//in case of the second argument is not a key of the map, the function should return the operand
         System.out.println("------------------------------------------------------");
         System.out.println("Well done message: " + trickyWellDoneSupplier().get().get().get());
         System.out.println("------------------------------------------------------");
