@@ -1,4 +1,4 @@
-package com.endava;
+package com.endava.lambdas;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -6,9 +6,9 @@ import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 
-import static com.endava.CrazyLambdas.*;
+import static com.endava.lambdas.CrazyLambdas.*;
 
-public class Main {
+public class LambdasMain {
     public static void main(String[] args) {
         Runnable runnable = () -> System.out.println("Hello thread");
         IntUnaryOperator intUnaryOperator = operand -> operand;

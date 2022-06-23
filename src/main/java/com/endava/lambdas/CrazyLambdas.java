@@ -1,4 +1,4 @@
-package com.endava;
+package com.endava.lambdas;
 
 import java.math.BigDecimal;
 import java.util.Map;
