@@ -66,7 +66,7 @@ public class Pack_4_Streams_Difficult {
         long result = 0;
 
         result = EMPLOYEES.stream()
-                .flatMap(employee -> Stream.of(employee.getHomeAddress(), employee.getCorrespondenceAddress()))
+                .flatMap(employee -> Stream.of(employee.getHomeAddress(), employee.getCorrespondenceAddress().get()))
                 .distinct()
                 .count();
 
@@ -121,7 +121,7 @@ public class Pack_4_Streams_Difficult {
                 .collect(groupingBy(word -> word, Collectors.counting()))
                 .entrySet().stream()
                 .map(entry -> entry.getKey() + " - " + entry.getValue())
-                .sorted()
+                .sorted((entry1, entry2) -> entry1.compareTo(entry2))
                 .collect(Collectors.toList());
 
         assertThat(result, sameBeanAs(asList(
@@ -159,7 +159,13 @@ public class Pack_4_Streams_Difficult {
         IntStream ints = new Random(0).ints(10);
         int[] result = null;
 
-        //TODO: implement the solution
+        result = IntStream.concat(longs.mapToInt(longValue -> (int) longValue),ints)
+                .map(value -> Math.abs(value))
+                .sorted()
+                .skip(5)
+                .limit(10)
+                .map(value -> value % 1000)
+                .toArray();
 
         assertThat(result, sameBeanAs(new long[] {106, 266, 402, 858, 313, 688, 303, 137, 766, 896}));
     }
